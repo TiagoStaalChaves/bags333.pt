@@ -60,6 +60,7 @@ h3{font-size:1.5rem;font-weight:800;letter-spacing:.02em}
 .mast-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
 .mast-txt b{font-family:var(--display);font-weight:800;font-size:1.55rem;text-transform:uppercase;letter-spacing:.04em;line-height:1}
 .mast-txt span{color:var(--muted);font-size:.9rem}
+.lnk-ev{color:var(--green);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .medal{margin-left:auto;width:64px;height:64px;flex:none;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.18)}
 @media (max-width:480px){.logo{height:50px}.medal{width:50px;height:50px}.mast-txt b{font-size:1.2rem}}
 
@@ -489,7 +490,7 @@ function viewGroup(){
   app.innerHTML=`<div class="view">
   <section class="hero">
     <div><div class="eyebrow">Desde ${esc(PAST[0]?PAST[0].when:"")}</div><h1>Quem anda <em>connosco</em></h1>
-    <p>Todos os passeios e encontros do grupo, quem esteve em cada um e o escalão de cada membro. Toca num autocolante lá em cima para abrir um evento.</p></div>
+    <p>Todos os passeios e encontros do grupo, quem esteve em cada um e o escalão de cada membro. Para ver um passeio em detalhe, toca em <a href="#passeios" class="lnk-ev" onclick="event.preventDefault();setSub(true);window.scrollTo({top:0,behavior:'smooth'})">Eventos</a>, lá em cima, e escolhe o autocolante.</p></div>
     <div class="board">
       <div><b>${members.filter(m=>!m.p).length}<small class="pc"> + ${members.filter(m=>m.p).length}*</small></b><span>membros + penduras</span></div>
       <div><b>${DONE}</b><span>eventos realizados</span></div>
